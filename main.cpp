@@ -45,14 +45,12 @@ void myGraph::ReadGraph(string filename) {
     int numVertices;
     string line;
     vector<string> storage;
-    string temp;
 
     ifstream myfile(filename);
     if(myfile.is_open()) {
         while(getline(myfile, line)) {
-            myfile >> temp;
-            storage.push_back(temp);
-            cout << temp;
+            myfile >> line;
+            storage.push_back(line);
         }
 
         for (int i = 0; i < storage.size(); i++) {
