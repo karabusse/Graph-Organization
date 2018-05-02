@@ -74,7 +74,7 @@ void myGraph::TopologicalSort() {}
  * Print total weight of min span tree
  * Print list of edges and individual weight (1 edge/line)
  * Treat graph as undirected
- * 
+ *
  */
 void myGraph::MinimumSpanningTree() {}
 
