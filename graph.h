@@ -31,6 +31,7 @@ public:
     int numVertices;
     list<int> *adj; //Pointer to array containing adjacency list
     myGraph(int v); //Constructor
+    myGraph(); //Default constructor
     void addEdge(int v, int w);
     void ReadGraph(string filename);
     void TopologicalSortUtil(int v, bool visited[], stack<int> &Stack);

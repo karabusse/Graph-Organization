@@ -2,11 +2,17 @@
 #include <fstream>
 #include "graph.h"
 #include <string>
+#include <vector>
 /*
  * Weighted directed graph
  * Use adjacency matrix or adjacency list
  */
 using namespace std;
+
+/**
+ * Default constructor
+ */
+myGraph::myGraph() {}
 
 /**
  * Constructor for myGraph class
@@ -36,28 +42,44 @@ void myGraph::TopologicalSortUtil(int v, bool *visited, stack<int> &Stack) {
  * @param filename
  */
 void myGraph::ReadGraph(string filename) {
-    int count = 0;
     int numVertices;
     string line;
+    vector<string> storage;
+    string temp;
+
     ifstream myfile(filename);
-    if (myfile.is_open()) {
-        cout << line << '\n'; //This is for debugging
-        count++;
-        if (count == 1) {
-            numVertices = stoi(line);
-        }
-        for (int i = 0; i < numVertices; i++) {
-
+    if(myfile.is_open()) {
+        while(getline(myfile, line)) {
+            myfile >> temp;
+            storage.push_back(temp);
+            cout << temp;
         }
 
-
-        for (int i = 0; i < count; i++) {
-
+        for (int i = 0; i < storage.size(); i++) {
+            cout << storage[i] << '\n';
         }
-        myfile.close();
-    } else {
-        cout << "Unable to open file";
     }
+    else {
+        cout << "Something's wrong yo" <<endl;
+    }
+//    if (myfile.is_open()) {
+//        cout << line << '\n'; //This is for debugging
+//        count++;
+//        if (count == 1) {
+//            numVertices = stoi(line);
+//        }
+//        for (int i = 0; i < numVertices; i++) {
+//
+//        }
+//
+//
+//        for (int i = 0; i < count; i++) {
+//
+//        }
+//        myfile.close();
+//    } else {
+//        cout << "Unable to open file";
+//    }
 }
 
 /**
