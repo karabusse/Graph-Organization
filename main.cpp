@@ -49,8 +49,7 @@ void myGraph::ReadGraph(string filename) {
     ifstream myfile(filename);
     if(myfile.is_open()) {
         while(getline(myfile, line)) {
-            myfile >> line;
-            storage.push_back(line);
+            storage.push_back(line); //Places each line of the text document into a vector for storage reasons
         }
 
         for (int i = 0; i < storage.size(); i++) {
@@ -82,7 +81,7 @@ void myGraph::ReadGraph(string filename) {
 
 /**
  * Print topological sort of graph
-c++ - Weighted directed gra
+ * Weighted directed graph***Check
  * or error stating not possible
  *
  * This is depth first search

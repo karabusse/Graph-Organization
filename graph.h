@@ -19,6 +19,7 @@ struct edge {
 };
 
 struct node {
+    string name;
     string path;
     int cost;
     node* next(int cost, string path);
